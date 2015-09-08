@@ -30,3 +30,6 @@ dog.yelp();
 var madDog = new MadDog();
 madDog.yelp();
 ```
+题目2：请给Array本地对象增加一个原型方法，它的用途是删除数组条目中重复的条目(可能有多个)，返回值是一个包含被删除的重复条目的新数组。
+```javascript
+```
