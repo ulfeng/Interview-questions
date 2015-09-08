@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+
+    <title></title>
+</head>
+<body>
+    <!--2种方式，实现某DIV元素以50px每秒的速度左移100px。-->
+    <script>
+             $(document).ready(function () {
+                 $("button").click(function () {
+                   $("div").animate({ left: '100px' },2000);
+                 })
+             })
+    </script>
+
+    <button type="button">Try it</button>
+   
+    <div style="background:#98bf21;height:100px;width:100px; position:absolute;"></div>
+
+</body>
+</html>

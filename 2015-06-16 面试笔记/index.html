@@ -1,0 +1,306 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+
+    <script src="jquery-1.11.1.js"></script>
+    <title></title>
+</head>
+<body>
+    <!--1、JavaScript的几种弹出框，各有什么区别？
+        alert（） 一段消息和确认按钮的警告框
+        confirm（） 一段消息、确认按钮和取消按钮的确认框
+        prompt（） 显示可提示用户输入的对话框
+    -->
+
+    <!-- JavaScript中最常用的数组有哪些
+        var mycars = new Array(); 创建数组；
+        concat() 合并数组；   
+        join()  用数组元素组成字符串； 
+        pop() 删除数组的最后一个元素
+        push() 数组末尾添加一个元素
+        reverse() 反转一个数组中的元素
+        shift() 删除数组中的第一个元素
+        slice() 在一个数组中选择元素
+        sort() 数组元素排序
+        splice() 在数组中指定位置添加元素
+        toString() 转化数组到字符串
+     -->
+    <!-- 创建一个数组 -->
+    <script>
+        var i;
+        var mycars = new Array();
+        mycars[0] = "Saab";
+        mycars[1] = "Volvo";
+        mycars[2] = "BMW";
+
+        for (i = 0; i < mycars.length; i++) {
+            document.write(mycars[i] + "<br>");
+        }
+    </script>
+
+    <!-- 合并三个数组 -->
+    <script>
+        var parents = ["Jani", "Tove"];
+        var brothers = ["Stale", "Kai Jim", "Borge"];
+        var children = ["Cecilie", "Lone"];
+        var family = parents.concat(brothers, children);
+        document.write(family);
+    </script>
+
+    <!-- 用数组元素组成字符串 -->
+    <p id="demo1">XXXXXXXXX</p>
+    <button onclick="myfunction1()">Try it 1</button>
+    <script>
+        function myfunction1() {
+            var fruits = ["Banana", "Orange", "Apple"];
+            var x = document.getElementById("demo1");
+            x.innerHTML = fruits.join();
+        }
+    </script>
+
+    <!-- 删除数组的最后一个元素 -->
+    <p id="demo2">XXXXXXXXXXXXXX</p>
+    <button onclick="myfunction2()">Try it 2</button>
+    <script>
+        var fruits = ["Banana", "Banana", "Orange", "Apple"];
+        function myfunction2() {
+            fruits.pop();
+            var x = document.getElementById("demo2");
+            x.innerHTML = fruits;
+        }
+    </script>
+
+    <!-- 数组最后添加一个元素 -->
+    <p id="push">XXXXXXXXXXXXXX</p>
+    <button onclick="push()">Push</button>
+    <script>
+        var fruits = ["Banana", "Banana", "Orange", "Apple"];
+        function push() {
+            fruits.push("Kiwi");
+            var x = document.getElementById("push");
+            x.innerHTML = fruits;
+        }
+    </script>
+
+    <!-- 反转一个数组中元素的位置 -->
+    <p id="reverse">XXXXXXXXXXXXXX</p>
+    <button onclick="reverse()">Reverse</button>
+    <script>
+        var fruits = ["Banana", "Lidi", "Orange", "Apple"];
+        function reverse() {
+            fruits.reverse();
+            var x = document.getElementById("reverse");
+            x.innerHTML = fruits;
+        }
+    </script>
+
+    <!-- 删除数组中的第一个元素 -->
+    <p id="shift">XXXXXXXXXXXXXX</p>
+    <button onclick="shift()">Shift</button>
+    <script>
+        var fruits = ["Banana", "Lidi", "Orange", "Apple"];
+        function shift() {
+            fruits.shift();
+            var x = document.getElementById("shift");
+            x.innerHTML = fruits;
+        }
+    </script>
+
+    <!-- 从一个数组中选择元素 -->
+    <p id="slice">XXXXXXXXXXXXXX</p>
+    <button onclick="slice()">Slice</button>
+    <script>
+        var fruits = ["Banana", "Lidi", "Orange", "Apple"];
+        function slice() {
+            var fruits_child = fruits.slice(0,3);
+            var x = document.getElementById("slice");
+            x.innerHTML = fruits_child;
+        }
+    </script>
+
+    <!-- 按字母升序排序 -->
+    <p id="sort_a">XXXXXXXXXXXXXX</p>
+    <button onclick="sort_a()">Sort_A</button>
+    <script>
+        var fruits = ["Banana", "Apple", "Orange"];
+        function sort_a() {
+            fruits.sort();
+            var x = document.getElementById("sort_a");
+            x.innerHTML = fruits;
+        }
+    </script>
+
+    <!-- 按数字升序排序 -->
+    <p id="sort_1">XXXXXXXXXXXXXX</p>
+    <button onclick="sort_1()">Sort_1</button>
+    <script>
+        var points = [5,2,9];
+        function sort_1() {
+            points.sort(function (a, b) { return a - b });   //升序排列
+            // points.sort(function (a, b) { return b - a });   降序排列
+            var x = document.getElementById("sort_1");
+            x.innerHTML = points;
+        }
+    </script>
+
+    <!-- 在数组的第二个位置添加一个元素 -->
+    <p id="splice">XXXXXXXXX</p>
+    <button onclick="splice()">Splice</button>
+    <script>
+        function splice() {
+            var fruits = ["Orange", "Apple", "Kiwi"];
+            fruits.splice(2, 0, "Banana", "Mango");
+            var x = document.getElementById("splice");
+            x.innerHTML = fruits;
+        }
+    </script>
+
+    <!-- 转换数组中的原色为字符串 -->
+    <p id="toString">XXXXXXXXX</p>
+    <button onclick="String()">toString</button>
+    <script>
+        function String() {
+            var fruits = ["Orange", "Apple", "Kiwi"];
+            var str = fruits.toString();
+            var x = document.getElementById("toString");
+            x.innerHTML = str;
+        }
+    </script>
+
+    <!-- 3、JavaScript 如何实现继承 -->
+    <script>
+        //一、类式继承：
+        //定义一个类式继承的扩展函数
+        function extend(subClass, superClass) {
+            var F = function () { };
+            F.prototype = superClass.prototype;
+            subClass.prototype = new F();
+            subClass.superClass = superClass.prototype;
+            subClass.constructor = subClass;
+            if (superClass.prototype.constructor === Object.prototype.constructor) {
+                superClass.prototype.constructor = superClass;
+            }
+        }
+        //定义一个父类
+        function Person(name) {
+            this.name = name;
+        }
+        Person.prototype.getName = function () {
+            console.log(this.name);
+        };
+        //定义一个子类
+        function Author(name, city) {
+            var superClass = Author.superClass.constructor;//引用父类
+            superClass.call(this, name);//用对象冒充的方法，把子类的this和参数传递给父类.从而达到继承父类的属性
+            this.city = city;
+        }
+        extend(Author, Person);//继承父类的方法
+        //定义一个自己的方法
+        Author.prototype.getCity = function () {
+            console.log(this.city);
+        };
+        //测试
+        var newAuthor = new Author('wen', 'hainan');
+        newAuthor.getName();
+        newAuthor.getCity();
+
+        /*----------------------------------------------------------------------------------------------------------------------*/
+
+        //二、原型继承：
+        //定义一个用于原型继承的函数
+        function clone(object) {
+            var F = function () { };
+            F.prototype = object;
+            return new F();
+        }
+        //定义一个对象
+        var PersonObject = {
+            name: 'name',
+            getName: function () {
+                console.log(this.name);
+            }
+        };
+        var AuthorObject = clone(PersonObject);//继承父类Person的属性和方法
+        //测试
+        AuthorObject.name = 'wen';//定义一个自己的属性name用于覆盖父类的name属性，也可以定义一个自己的方法，用于覆盖父类的方法（ 注：父类的属性和方法还是不会改变，因为子类定义自己的属性和方法只是一个覆盖，而不是修改父类的属性和方法）
+        AuthorObject.getName();
+</script>
+
+    <!-- 4、面向对象的几种写法 -->
+    <script>
+        //面向对象的几种写法
+        //第一种：
+        function CicleOne(r) {
+            this.r = r;
+            this.area = function () {
+                console.log('第一种：' + Math.PI * this.r * this.r);
+            };
+        }
+        //测试
+        var newCicle = new CicleOne(2);
+        newCicle.area();
+
+        //第二种：
+        function CicleTwo(r) {
+            this.r = r;
+        }
+        CicleTwo.prototype.area = function () {
+            console.log('第二种：' + Math.PI * this.r * this.r);
+        };
+        //测试
+        var newCicleTwo = new CicleTwo(3);
+        newCicleTwo.area();
+
+
+        //第三种：
+        var cicleObjectOne = {
+            r: 1,
+            area: function () {
+                console.log('第三种：' + Math.PI * this.r * this.r)
+            }
+        };
+        //测试
+        cicleObjectOne.r = 6;
+        cicleObjectOne.area();
+
+        //第四种：
+        var cicleObjectTwo = {};
+        cicleObjectTwo.r = 5;
+        cicleObjectTwo.area = function () {
+            console.log('第四种：' + Math.PI * this.r * this.r);
+        };
+        //测试
+        cicleObjectTwo.area();
+
+</script>
+
+    <!-- 5、使用过哪些JavaScript 框架，各有什么作用？
+        jquery 是JavaScript的函数库，封装了很多方法。然后我们写少的代码，做很多的事
+        AngularJS 通过新的属性和方法扩展了HTML
+                  可以构建一个单一页面应用程序
+         -->
+
+    <!--6. jquery中的attr()和prop()有什么区别？
+
+    答：当你用attr()获取复选框的checked属性（其中复选框没有设置checked属性）时，
+        它会返回undefined，无论你勾选复选框或取消复选框，它都给你返回undefined；
+        要是给复选框设置了checked属性，则它不管你选中或未选中复选框，他都会返回checked，这不是我们想要的结果。
+        而当你使用prop获取复选框的checked属性时，它会对应你选中或未选中返回true或false；
+        所以，当我们需要处理内置属性的值是true或false时，使用prop()就可以达到我们预期想要的处理效果。-->
+
+
+    <!--7.什么是xss攻击，如何防御xss攻击？
+
+    答：xss攻击是跨站脚本攻击。xss是经常出现在web应用中的安全漏洞，它允许恶意web用户将代码植入到提供给其他用户使用的页面中。
+
+    防御：1、对用户提交的代码进行匹配检查，对提交的信息含有“javascript”的代码进行过滤。
+
+            2、对所有用户提交内容进行可靠的输入验证，包括对URL、查询关键字、HTTP头、POST数据等，
+        仅接受指定长度范围内、采用适当格式、采用所预期的字符的内容提交，对其他的一律过滤。
+
+            3、实现Session标记(session tokens)、CAPTCHA系统或者HTTP引用头检查，以防功能被第三方网站所执行。
+
+            4、确认接收的的内容被妥善的规范化，仅包含最小的、安全的标签(没有javascript)，去掉任何对远程内容的引用(尤其是样式表和javascript)。-->
+</body>
+</html>
