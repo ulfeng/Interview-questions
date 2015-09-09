@@ -105,4 +105,28 @@ Array.prototype.fun1 = function () {
         var arr = [112, 112, 34, '你好', 112, 112, 34, '你好', 'str', 'str1'];
         alert(arr.unique3());
 ```
+###css方面
+使用纯CSS实现未知尺寸的图片(但高宽都小于200px)在200px的正方形容器中水平和垂直居中。
+```css
+.box {
+display: table-cell;
+vertical-align:middle;
+width:200px;
+height:200px;
+text-align:center;
+/* hack for ie */
+*display: block;
+*font-size: 175px;
+/* end */
+border: 5px solid red;
+}
+.box img {
+vertical-align:middle;
+}
+### html方面
+在不使用 border 样式的情况下，画出一条一px高的横线，在不同浏览器的Quirksmode和CSSCompat模式下都保持同一效果。
+```html
+ <div style="height:1px;overflow:hidden;background:#000"></div>
+```
+
 
