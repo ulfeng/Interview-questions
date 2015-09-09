@@ -123,9 +123,9 @@ border: 5px solid red;
 .box img {
 vertical-align:middle;
 }
-### html方面
+###html方面
 在不使用 border 样式的情况下，画出一条一px高的横线，在不同浏览器的Quirksmode和CSSCompat模式下都保持同一效果。
-```html
+```
  <div style="height:1px;overflow:hidden;background:#000"></div>
 ```
 
