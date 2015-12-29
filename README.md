@@ -192,6 +192,27 @@ console.log((bar !== null) && (typeof bar === "object") && (toString.call(bar) !
 // jquery
 console.log((bar !== null) && (typeof bar === "object") && (!$.isArray(bar)));
 ```
+2.What will the code below output to the console and why?
+```javascript
+(function () {
+            var a = b = 3;
+        })();
+        console.log("a defined? " + (typeof a !== "undefined"));
+        console.log("b defined? " + (typeof b !== "undefined"));
+```
+        The answer:
+```javascript
+        console.log("a defined? " + (typeof a !== "undefined"));  // false
+        console.log("b defined? " + (typeof b !== "undefined"));  // true
+        // In fact, var a = b = 3: is actually shorthand for:
+        // b = 3;
+        // var a = b;
+        // b ends up being a global variable
+```
+
+3.
+
+
 
 
 
