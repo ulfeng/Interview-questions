@@ -168,6 +168,76 @@ alert(object.getNameFunc()());   // My Object
         document.write("typeof(undefined)" + typeof (undefined) + "<br>");   // undefined
 ```
 
+####你需要知道的25个JavaScript面试题 [原文地址](http://www.toptal.com/javascript/interview-questions) （备注：需要翻墙）
+
+
+
+1.What is a potential pitfall with using "typeof bar === 'object'" to determine if "bar" is an object? How can this pitfall be avoided?(使用"typeof bar === 'object'" 判断 bar是object的潜在危险，如何避免)
+```javascript
+// null also considered an object
+var bar = null;
+console.log(typeof bar === "object");  // logs true
+
+// 判断是否为对象时，先判断 bar 是否为 null,即可避免
+console.log((bar !== null) && (typeof bar === "object")); 
+
+// There are two other things worth nothing:
+// First, the above solution will return "false" if "bar" is a function. If you wanted to also return "true" for functions, you could amend the above solution to be:
+console.log((bar !== null) && ((typeof bar === "object") || (typeof bar === "function")));
+
+// Second, the above solution will return "true" if "bar" is an array. If you want to also false for arrays, you could amend the above solution to be:
+console.log((bar !== null) && (typeof bar === "object"));  // true
+console.log((bar !== null) && (typeof bar === "object") && (toString.call(bar) !== "[object Array]")); // false
+
+// jquery
+console.log((bar !== null) && (typeof bar === "object") && (!$.isArray(bar)));
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     
     
