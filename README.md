@@ -228,9 +228,49 @@ console.log((bar !== null) && (typeof bar === "object") && (!$.isArray(bar)));
 ```
 The answer:
 ```javascript
-// The above code will output the following to the console:
-// outer func: this.foo = bar
+// The above code will output the following to the console
+        // outer func: this.foo = bar
+        // outer func: self.foo = bar 
+        // inner func: this.foo = undefined
+        // inner func: self.foo = bar
+        // In the outer function, both "this" and "self" refer to "myobject"
+        // In the inner function, "this" no longer refers to "myobject","self" refer to "myobject"
 ```
+
+4.What is the significance of, and reason for, wrapping the entire content of a JavaScript source
+file in a function block?
+The answer:
+This is an increasingly common practice, employed by many popular JavaScript libraries (jQuery, Node.js, etc.).
+This technique creates a closure around the entire contents of the file which, perhaps most importantly, 
+creates a private namespace and thereby helps avoid potential name clashes between different JavaScript modules and libraries.
+(单独的命名空间，避免命名冲突)。
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
