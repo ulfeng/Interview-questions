@@ -257,6 +257,28 @@ The answer:
     语法和行为改变：
     -全局变量显式声明..etc..；
     [参考地址](http://blog.csdn.net/airingyuan/article/details/25036297)
+    
+6.  Consider the two functions below. Will they both return the same thing? 
+ Why or why not?
+```javascript
+function foo1() {
+            return {
+                bar: "hello"
+            };
+        }
+
+        function foo2() {
+            return
+            {
+                bar: "hello"
+            };
+        }
+        window.onload = function () {
+            console.log(foo1());  // bar: "hello"
+            console.log(foo2());  // undefined
+        }
+```
+      semicolons(分号) are technically optional in JavaScript 
 
 
 
