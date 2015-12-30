@@ -245,6 +245,18 @@ This technique creates a closure around the entire contents of the file which, p
 creates a private namespace and thereby helps avoid potential name clashes between different JavaScript modules and libraries.
 (单独的命名空间，避免命名冲突)。
 
+5.What is the significance, and what are the benefits, of including "use strict" at the 
+beginning of a JavaScript source file?<br>
+The answer:
+    设立“严格模式”的目的，主要有以下几个：
+    -消除JavaScript语法的一些不合理、不严谨之处，减少一些怪异模式；
+    -消除代码运行的一些不安全之处，保证代码运行的安全；
+    -提高编译器效率，增加运行速度；
+    -为未来新版本的JavaScript做好铺垫。
+    // 进入“严格模式”的标志，是："use strict"
+    语法和行为改变：
+    -全局变量显式声明..etc..；
+    [参考地址](http://blog.csdn.net/airingyuan/article/details/25036297)
 
 
 
