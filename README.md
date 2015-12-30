@@ -279,7 +279,23 @@ function foo1() {
         }
 ```
       semicolons(分号) are technically optional in JavaScript 
+      
+7. What is "NaN"? What is the type? How can you reliably test if a value is 
+equal to "NaN"?
+```javascript
+        // means not a number
+        
+        // type: number
+        // Additionally, "NaN" compared to anything - even itself! - is false:
+        window.onload = function () {
+            console.log(typeof NaN === "number"); // logs true
+            console.log(NaN === NaN); // logs false
+        }
 
+        // test if a value is equal to "NaN"
+        // 1. isNaN();
+        // 2. value !== value  // logs true
+```
 
 
 
