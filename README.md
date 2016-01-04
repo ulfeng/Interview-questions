@@ -337,6 +337,18 @@ equal to "NaN"?
         // parseInt(1000000000000000000000,10) === 1000000000000000000000;false
 ```
 
+10.In what order will the numbers 1-4 be logged to the console when the code below is executed? Why?
+```javascript
+        (function(){
+            console.log(1);
+            setTimeout(function(){console.log(2)},1000);
+            setTimeout(function(){console.log(3)},0);
+            console.log(4);
+        })();
+        // JavaScript 是单线程语言，一些异步事件是在主体事件执行之后才执行的
+        // 1,4,3,2
+```
+
 
 
 
