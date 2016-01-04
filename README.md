@@ -170,8 +170,6 @@ alert(object.getNameFunc()());   // My Object
 
 ####你需要知道的25个JavaScript面试题 [原文地址](http://www.toptal.com/javascript/interview-questions) （备注：需要翻墙）
 
-
-
 1.What is a potential pitfall with using "typeof bar === 'object'" to determine if "bar" is an object? How can this pitfall be avoided?(使用"typeof bar === 'object'" 判断 bar是object的潜在危险，如何避免)
 ```javascript
 // null also considered an object
