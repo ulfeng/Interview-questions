@@ -304,6 +304,39 @@ equal to "NaN"?
         // 数字在JavaScript中都是浮动精度的处理 
 ```
 
+9.Discuss possible ways to write a function "isInteger(x)" that determines if "x" is an integer.
+```javascript
+// With that in mind, the simplest and cleanest pre-ECMAScript-6 solution 
+        // (which is also sufficiently robust to return false even if a non-numeric value such as a string or null is passed to the function)
+        // would be the following:
+        function isInteger(x) {
+            return (x^0) === x;
+        }
+
+        // the following solution would also work,although not as elegant as the one above:
+        function isInteger(x) {
+            return Math.round(x) === x;
+        }
+
+        // Note that "Math.ceil(x)" Or "Math.floor()" could be used equally well (instead of "Math round()") in
+        // the above implementation
+        // Or alternatively
+        function isInteger(x) {
+            return (typeof x === 'number') && (x % 1 === 0);
+        }
+
+        // One fairly common incorrect solution is the following:
+        function isInteger(x){
+            return parseInt(x,10) === x;
+        }
+        // While this parseInt -based approach will work well for manyvalues of x,once x become quite large,
+        // it will fail to work properly.The problem is that parseInt() coerces its first parameter to a string before parseing gigits
+
+        // > String(1000000000000000000000);  '1e+21'
+        // > parseInt(1000000000000000000000,10); 1
+        // parseInt(1000000000000000000000,10) === 1000000000000000000000;false
+```
+
 
 
 
