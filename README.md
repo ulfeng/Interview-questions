@@ -349,6 +349,27 @@ equal to "NaN"?
         // 1,4,3,2
 ```
 
+11.Write a simple function (less than 80 characters) that returns a boolean indicating whether or not a string is a palindrome.
+```javascript
+// 判断一个字符串是不是回文
+function isPalindrome(str) {
+    // replace() 用一些字符串替换另一些字符串，或者替换一个与正则表达式相同的字符串
+    // toLowerCase() 把字符串转换为小写
+    // /\W/g 全局匹配不可以组成字符串的字符 
+    // split(separator,howmany) ,把一个字符串分割成字符串数组
+    // separator:字符串或者正则表达式，从该参数指定的地方分割stringObject
+    // howmany:指定返回数组的最大长度
+    // reverse() 颠倒数组中元素的位置
+    // join() 把数组中的元素都放入一个字符串
+    str = str.replace(/\W/g, '').toLowerCase();
+    return (str == str.split('').reverse().join(''));
+}
+
+alert(isPalindrome("rever"));
+alert(isPalindrome("$@rever"));
+alert(isPalindrome("re$ver"));
+alert(isPalindrome("xfsfgds"));
+```
 
 
 
