@@ -371,6 +371,39 @@ alert(isPalindrome("re$ver"));
 alert(isPalindrome("xfsfgds"));
 ```
 
+12. Write a num method which will work properly when invoked using either syntax below.<br>
+ console.log(sum(2,3));  Outputs 5<br>
+ console.log(sum(2)(3)); Outputs 5
+```javascript
+// Method 1
+function sum1(x) {
+    if (arguments.length == 2) {
+        return arguments[0] + arguments[1];
+    } else {
+        return function(y) {
+            return x + y;
+        }
+    }
+}
+
+// alert(sum1(2,3));   outputs 5
+// alert(sum1(2)(3));  x=2;y=3 outputs 5
+
+// Method 2
+function sum2(x, y) {
+    if (y !== undefined) {
+        return x + y;
+    } else {
+        return function(y) {
+            return x + y;
+        }
+    }
+}
+
+alert(sum2(2,3));
+alert(sum2(2)(3));
+```
+
 
 
 
