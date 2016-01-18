@@ -256,7 +256,7 @@ The answer:
     -全局变量显式声明..etc..；
     [参考地址](http://blog.csdn.net/airingyuan/article/details/25036297)
     
-6.  Consider the two functions below. Will they both return the same thing? 
+6.Consider the two functions below. Will they both return the same thing? 
  Why or why not?
 ```javascript
 function foo1() {
@@ -278,7 +278,7 @@ function foo1() {
 ```
       semicolons(分号) are technically optional in JavaScript 
       
-7. What is "NaN"? What is the type? How can you reliably test if a value is 
+7.What is "NaN"? What is the type? How can you reliably test if a value is 
 equal to "NaN"?
 ```javascript
         // means not a number
@@ -404,10 +404,22 @@ alert(sum2(2,3));
 alert(sum2(2)(3));
 ```
 
+13.Consider the following code snippet:
+```javascript
+   for (var i = 0; i < 5; i++){
+       var btn = document.createElement('button');
+       btn.appendChild(document.createTextNode('Button ' + i));
+       btn.addEventListener('click', function(){
+           console.log(i);
+       })
+       document.body.appendChild(btn);
+   }
+```
+(a)What gets logged to the console when the user clicks on "Button 4" and why?<br>
+(b)Provide one or more alternate implementations that will work as expected.
+```javascript
 
-
-
-
+```
 
 
 
