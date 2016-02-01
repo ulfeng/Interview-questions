@@ -453,6 +453,67 @@ onload()和document.ready()的区别有以下两点：<br>
 $("*").css("border" , "2px solid dashed");
 ```
 
+##### 5、当CDN上的jQuery文件不可用时，该怎么办？
+为了节省带宽和脚本引用的稳定性，我们会使用CDN上的jQuery文件，<br>
+例如google的jquery cdn服务。但是如果这些CDN上的jQuery服务不可用，<br>
+我们还可以通过以下代码来切换到本地服务器的jQuery版本：
+```javascript
+<script type="text/javascript" language="Javascript" src="http://ajax.aspnetcdn.com/ajax/jquery/jquery-1.4.1.min.js "></script>
+
+<script type='text/javascript'>//<![CDATA[
+
+if (typeof jQuery == 'undefined') {
+
+document.write(unescape("%3Cscript src='/Script/jquery-1.4.1.min.js' type='text/javascript' %3E%3C/script%3E"));
+
+}//]]>
+
+</script>
+```
+
+##### 6、如何使用jQuery实现点击按钮弹出一个对话框？
+```jquery
+<script type="text/javascript">
+   $(document).ready(function () { 
+       $('#Button1').click(function () { 
+           alert($('#inputField').attr("value")); 
+    }); }); 
+</script>
+```
+
+##### 7、jQuery中的Delegate()函数有什么作用？
+delegate()会在以下两个情况下使用到：<br>
+1、如果你有一个父元素，需要给其下的子元素添加事件，
+这时你可以使用delegate()了，代码如下：
+```jquery
+$("ul").delegate("li", "click", function(){
+    $(this).hide();
+});
+```
+2、当元素在当前页面中不可用时，可以使用delegate()
+
+##### 8、怎样用jQuery编码和解码URL？
+```jquery
+encodeURIComponent(url) and decodeURIComponent(url)
+```
+
+##### 9、如何用jQuery禁用浏览器的前进后退按钮？
+```jquery
+<script type="text/javascript" language="javascript">
+
+$(document).ready(function() {
+
+     window.history.forward(1);
+
+     //OR
+
+     window.history.forward(-1);
+
+});
+
+</script>
+```
+
 
 
 
