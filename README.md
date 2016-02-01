@@ -421,6 +421,28 @@ alert(sum2(2)(3));
 
 ```
 
+#### jQuery经典面试题及答案精选
+    1、jQuery的美元符号$有什么作用？
+其实美元符号$只是”jQuery”的别名，它是jQuery的选择器，如下代码：
+```jquery 
+$(document).ready(function(){
+
+});
+```
+当然你也可以用jQuery来代替$，如下代码：
+```jquery
+jQuery(document).ready(function(){
+
+});
+```
+jQuery中就是通过这个美元符号来实现各种灵活的DOM元素选择的，
+例如$(“#main”)即选中id为main的元素。<br>
+    2、body中的onload()函数和jQuery中的document.ready()有什么区别？
+onload()和document.ready()的区别有以下两点：<br>
+1、我们可以在页面中使用多个document.ready()，但只能使用一次onload()。<br>
+2、document.ready()函数在页面DOM元素加载完以后就会被调用，而onload()函数<br>
+则要在所有的关联资源（包括图像、音频）加载完毕后才会调用。<br>
+
 
 
 
