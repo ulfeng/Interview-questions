@@ -1,0 +1,219 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>25个你应该知道的JavaScript/title></title>
+    <script>
+    // 1
+    //function tabSwitch() {
+    //    alert("x");
+    //}
+    //console.log((tabSwitch !== null) && (typeof tabSwitch === "object"));  // false
+    //console.log((tabSwitch !== null) && ((typeof tabSwitch === "object") || (typeof tabSwitch === "function"))); // true
+
+    //var bar = [];
+    //console.log((bar !== null) && (typeof bar === "object"));  // true
+    //console.log((bar !== null) && (typeof bar === "object") && (toString.call(bar) !== "[object Array]")); // false
+
+    //// jquery
+    //console.log((bar !== null) && (typeof bar === "object") && (!$.isArray(bar)));
+
+
+    // 2
+    //(function () {
+    //    var a = b = 3;
+    //})();
+    //console.log("a defined? " + (typeof a !== "undefined"));  // false
+    //console.log("b defined? " + (typeof b !== "undefined"));  // true
+
+    // 3
+    //var myObject = {
+    //    foo: "bar",
+    //    func: function () {
+    //        var self = this;
+    //        console.log("outer func: this.foo = " + this.foo);
+    //        console.log("outer func: self.foo = " + self.foo);
+    //        (function () {
+    //            console.log("inner func: this.foo = " + this.foo);
+    //            console.log("inner func: this.foo = " + self.foo);
+    //        }());
+    //    }
+    //}
+    //window.onload = function () {
+    //    myObject.func();
+    //}
+    // The above code will output the following to the console
+    // outer func: this.foo = bar
+    // outer func: self.foo = bar 
+    // inner func: this.foo = undefined
+    // inner func: self.foo = bar
+    // In the outer function, both "this" and "self" refer to "myobject"
+    // In the inner function, "this" no longer refers to "myobject","self" refer to "myobject"
+
+    // 4
+    // What is the significance of, and reason for, wrapping the entire content of a JavaScript source
+    // file in a function block?
+
+    //This is an increasingly common practice, employed by many popular JavaScript libraries (jQuery, Node.js, etc.).
+    //This technique creates a closure around the entire contents of the file which, perhaps most importantly, 
+    //creates a private namespace and thereby helps avoid potential name clashes between different JavaScript modules and libraries.
+
+
+    // 5
+    // Consider the two functions below. Will they both return the same thing? 
+    // Why or why not?
+
+    //function foo1() {
+    //    return {
+    //        bar: "hello"
+    //    };
+    //}
+
+    //function foo2() {
+    //    return
+    //    {
+    //        bar: "hello"
+    //    };
+    //}
+    //window.onload = function () {
+    //    console.log(foo1());  // bar: "hello"
+    //    console.log(foo2());  // undefined
+    //}
+
+    // semicolons(分号) are technically optional in JavaScript 
+
+    // 7
+    // What is "NaN"? What is the type? How can you reliably test if a value is 
+    // equal to "NaN"?
+
+    // means not a number
+
+    // type: number
+    // Additionally, "NaN" compared to anything - even itself! - is false:
+    //window.onload = function () {
+    //    console.log(typeof NaN === "number"); // logs true
+    //    console.log(NaN === NaN); // logs false
+    //}
+
+    // test if a value is equal to "NaN"
+    // 1. isNaN();
+    // 2. value !== value  // logs true
+
+    // 8.What will the code below output? Explain your answer
+    //window.onload = function () {
+    //    console.log(0.1 + 0.2);  // 0.30000000000000004
+    //    console.log(0.1 + 0.2 == 0.3); // false
+    //}
+    // 数字在JavaScript中都是浮动精度的处理 
+
+    //9.Discuss possible ways to write a function "isInteger(x)" that determines if "x" is an integer.
+    //function isInteger(x) {
+    //    var newPar = /^(-|\+)?\d+$/;
+    //    alert(newPar.test(x));
+    //}
+    // isInteger("0.56");
+
+    // With that in mind, the simplest and cleanest pre-ECMAScript-6 solution 
+    // (which is also sufficiently robust to return false even if a non-numeric value such as a string or null is passed to the function)
+    // would be the following:
+    /*function isInteger(x) {
+        return (x^0) === x;
+    }
+
+    // the following solution would also work,although not as elegant as the one above:
+    function isInteger(x) {
+        return Math.round(x) === x;
+    }
+
+    // Note that "Math.ceil(x)" Or "Math.floor()" could be used equally well (instead of "Math round()") in
+    // the above implementation
+    // Or alternatively
+    function isInteger(x) {
+        return (typeof x === 'number') && (x % 1 === 0);
+    }
+
+    // One fairly common incorrect solution is the following:
+    function isInteger(x){
+        return parseInt(x,10) === x;
+    }*/
+    // While this parseInt -based approach will work well for manyvalues of x,once x become quite large,
+    // it will fail to work properly.The problem is that parseInt() coerces its first parameter to a string before parseing gigits
+
+    // > String(1000000000000000000000);  '1e+21'
+    // > parseInt(1000000000000000000000,10); 1
+    // parseInt(1000000000000000000000,10) === 1000000000000000000000;false
+
+    // 10.In what order will the numbers 1-4 be logged to the console when the code below is executed? Why?
+    //        (function(){
+    //            console.log(1);
+    //            setTimeout(function(){console.log(2)},1000);
+    //            setTimeout(function(){console.log(3)},0);
+    //            console.log(4);
+    //        })();
+    // JavaScript 是单线程语言，一些异步事件是在主体事件执行之后才执行的
+    // 1,4,3,2
+
+    // Write a simple function (less than 80 characters) that returns a boolean indicating whether
+    // or not a string is a palindrome
+    // 判断一个字符串是不是回文
+    function Stack() {
+        this.dataStore = []; // 数组实现的栈
+        this.top = 0;
+        this.push = push;
+        this.pop = pop;
+        this.peek = peek;
+        this.clear = clear;
+        this.length = length;
+    }
+
+    function push(element) {
+        this.dataStore[this.top++] = element;
+    }
+
+    function peek() {
+        return this.dataStore[this.top - 1];
+    }
+
+    function pop() {
+        return this.dataStore[--this.top];
+    }
+
+    function clear() {
+        this.top = 0;
+    }
+
+    function length() {
+        return this.top;
+    }
+
+    function isPalindrome(word) { // 回文判断
+        var s = new Stack();
+        for (var i = 0; i < word.length; ++i) {
+            s.push(word[i]);
+        }
+        var rword = "";
+        while (s.length() > 0) {
+            rword += s.pop();
+        }
+
+        if (word == rword) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    var world = "hello";
+    alert(isPalindrome(world));
+    var word = "racecar";
+    alert(isPalindrome(word));
+
+    
+    </script>
+</head>
+
+<body>
+</body>
+
+</html>
