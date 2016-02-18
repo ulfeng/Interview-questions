@@ -1,4 +1,7 @@
-## JavaScript 概念部分
+## JavaScript
+
+-介绍JavaScript基本数据类型
+
 #### 七个去伪存真的 JavaScript 面试题
 1、创建JavaScript对象的两种方法是什么？方法1：
 ```javascript
