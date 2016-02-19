@@ -1,9 +1,10 @@
 ## JavaScript
 
-* 介绍JavaScript基本数据类型
-    JavaScript 数据类型分为基本类型和对象类型。
-    基本类型:String、Number、Boolean、Null、Undefined
-    对象类型:object,Array/Date/Function等
+* 介绍JavaScript基本数据类型<br>
+        JavaScript 数据类型分为基本类型和对象类型。<br>
+        基本类型:String、Number、Boolean、Null、Undefined<br>
+        对象类型:object,Array/Date/Function等<br>
+* 
 
 #### 七个去伪存真的 JavaScript 面试题
 1、创建JavaScript对象的两种方法是什么？方法1：
