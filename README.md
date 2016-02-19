@@ -1,13 +1,13 @@
 ## JavaScript
 
-* JavaScript基本数据类型
+* JavaScript 数据类型
 ```html
 answer:
     JavaScript 数据类型分为基本类型和对象类型。
     基本类型:String、Number、Boolean、Null、Undefined
     对象类型:object,Array/Date/Function等
 ```
-* JavaScript 基础规范
+* JavaScript 编码规范
 ```html
  answer:
     1、文件：
@@ -16,7 +16,11 @@ answer:
     2、结构：
     2.1、缩进
         4个空格做为一个缩进层级，switch下的case和default必须增加一个缩进层级。
-    2.2、
+    2.2、空格
+    2.3、换行
+    2.4、语句
+        if...else for 不能省略{}
+    
     
 ```
    
