@@ -7,7 +7,7 @@ answer:
     基本类型:String、Number、Boolean、Null、Undefined
     对象类型:object,Array/Date/Function等
 ```
-* JavaScript 编码规范
+* JavaScript 编码规范 [参考地址](https://segmentfault.com/a/1190000002460897#articleHeader4)
 ```html
  answer:
     1、文件：
@@ -20,6 +20,8 @@ answer:
     2.3、换行
     2.4、语句
         if...else for 不能省略{}
+    3、命名
+    4、注释
     
     
 ```
