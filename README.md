@@ -4,8 +4,10 @@
         JavaScript 数据类型分为基本类型和对象类型。<br>
         基本类型:String、Number、Boolean、Null、Undefined<br>
         对象类型:object,Array/Date/Function等<br>
-* 
-
+* JavaScript 基础规范<br>
+    answer:<br>
+    (1)文件：JavaScript 文件使用无 BOM 的 UTF-8 编码。UTF-8 有更广泛的适用性。<br>
+    BOM在使用程序或工具处理文件时可能造成不必要的干扰。<br>
 #### 七个去伪存真的 JavaScript 面试题
 1、创建JavaScript对象的两种方法是什么？方法1：
 ```javascript
