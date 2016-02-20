@@ -22,9 +22,8 @@ answer:
         if...else for 不能省略{}
     3、命名
     4、注释
-    
-    
 ```
+* JavaScript 原型/原型链
    
 #### 七个去伪存真的 JavaScript 面试题
 1、创建JavaScript对象的两种方法是什么？方法1：
