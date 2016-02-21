@@ -23,7 +23,7 @@ answer:
     3、命名
     4、注释
 ```
-* JavaScript 原型/原型链
+* JavaScript 原型/原型链 [参考地址1](http://www.cnblogs.com/TomXu/archive/2012/01/05/2305453.html)[参考地址2](http://www.jb51.net/article/55951.htm)
    
 #### 七个去伪存真的 JavaScript 面试题
 1、创建JavaScript对象的两种方法是什么？方法1：
