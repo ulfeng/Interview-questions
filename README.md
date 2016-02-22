@@ -77,6 +77,29 @@ Calculator.prototype = function() {
     }
 }();
 alert((new Calculator()).add(1,4));
+
+// 使用方式3 原型继承
+var BaseCalculator=function(){
+	this.decimalDigits=2;
+};
+
+// 使用原型给BaseCalculator扩展两个对象方法
+BaseCalculator.prototype.add=function(x,y){
+	return x+y;
+}
+BaseCalculator.prototype.subtract=function(x,y){
+	return x-y;
+};
+
+var Calculator=function(){
+	this.tax=5; 
+};
+
+Calculator.prototype=new BaseCalculator();
+
+var caluc=new Calculator();
+alert(caluc.add(1,2));
+alert(caluc.decimalDigits)
 ```
 
 
