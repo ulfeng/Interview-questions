@@ -100,6 +100,10 @@ Calculator.prototype=new BaseCalculator();
 var caluc=new Calculator();
 alert(caluc.add(1,2));
 alert(caluc.decimalDigits)
+
+// 上面Calculator的原型是指向BaseCalculator的实例上的，所以可以访问他的decimalDigits属性值，
+// 若不想让Calculator访问BaseCalculator的构造函数里申明的属性值，如下:
+
 ```
 
 
