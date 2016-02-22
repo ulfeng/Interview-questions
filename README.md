@@ -57,7 +57,26 @@ var caluc=new Calculator();
 alert(caluc.add(1,5));
 
 // 原型使用方式2：
-
+// 语法:
+Calculator.prototype = function() {}();
+// 优点:封装私有的function,通过return的形式暴露出简单的使用名称，以达到public/private的效果
+var Calculator = function(decimalDigits, tax) {
+    this.decimalDigits = decimalDigits;
+    this.tax = tax;
+}
+Calculator.prototype = function() {
+    add = function(x, y) {
+            return x + y;
+        },
+        subtract = function(x, y) {
+            return x - y;
+        }
+    return {
+        add: add,
+        subtract: subtract
+    }
+}();
+alert((new Calculator()).add(1,4));
 ```
 
 
