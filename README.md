@@ -24,8 +24,8 @@ answer:
     4、注释
 ```
 * JavaScript 原型/原型链 [参考地址1](http://www.cnblogs.com/TomXu/archive/2012/01/05/2305453.html)[参考地址2](http://www.jb51.net/article/55951.htm)
-    answer:<br>
 ```javascript
+// answer:
 // 刚学习JavaScript的时候，一般都是用如下方式来写代码
 var decimalDigits = 2,
     tax = 5;
@@ -38,6 +38,26 @@ function subtract(x, y) {
     return x - y;
 }
 // 通过执行各个function来得到结果，学习了原型之后，我们可以使用如下方式来美化一下代码
+
+// 原型使用方式1：
+var Calculator = function(decimalDigits, tax) {
+    this.decimalDigits = decimalDigits;
+    this.tax = tax;
+}
+
+Calculator.prototype = {
+    add: function(x, y) {
+        return x + y;
+    },
+    subtract: function(x, y) {
+        return x - y;
+    }
+};
+var caluc=new Calculator();
+alert(caluc.add(1,5));
+
+// 原型使用方式2：
+
 ```
 
 
