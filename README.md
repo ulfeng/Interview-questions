@@ -1,13 +1,13 @@
 ## JavaScript
 
-* JavaScript 数据类型
+#### JavaScript 数据类型
 ```html
 answer:
     JavaScript 数据类型分为基本类型和对象类型。
     基本类型:String、Number、Boolean、Null、Undefined
     对象类型:object,Array/Date/Function等
 ```
-* JavaScript 编码规范 [参考地址](https://segmentfault.com/a/1190000002460897#articleHeader4)
+#### JavaScript 编码规范 [参考地址](https://segmentfault.com/a/1190000002460897#articleHeader4)
 ```html
  answer:
     1、文件：
@@ -23,7 +23,7 @@ answer:
     3、命名
     4、注释
 ```
-* JavaScript 原型/原型链 [参考地址1](http://www.cnblogs.com/TomXu/archive/2012/01/05/2305453.html)[参考地址2](http://www.jb51.net/article/55951.htm)
+#### JavaScript 原型/原型链 [参考地址1](http://www.cnblogs.com/TomXu/archive/2012/01/05/2305453.html)[参考地址2](http://www.jb51.net/article/55951.htm)
 ```javascript
 // answer:
 // 刚学习JavaScript的时候，一般都是用如下方式来写代码
