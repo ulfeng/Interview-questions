@@ -24,6 +24,24 @@ answer:
     4、注释
 ```
 * JavaScript 原型/原型链 [参考地址1](http://www.cnblogs.com/TomXu/archive/2012/01/05/2305453.html)[参考地址2](http://www.jb51.net/article/55951.htm)
+    answer:<br>
+```javascript
+// 刚学习JavaScript的时候，一般都是用如下方式来写代码
+var decimalDigits = 2,
+    tax = 5;
+
+function add(x, y) {
+    return x + y;
+}
+
+function subtract(x, y) {
+    return x - y;
+}
+// 通过执行各个function来得到结果，学习了原型之后，我们可以使用如下方式来美化一下代码
+```
+
+
+
    
 #### 七个去伪存真的 JavaScript 面试题
 1、创建JavaScript对象的两种方法是什么？方法1：
