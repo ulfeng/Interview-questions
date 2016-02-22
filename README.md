@@ -1,6 +1,6 @@
 ## JavaScript
 
-#### JavaScript 数据类型
+##### JavaScript 数据类型
 ```html
 answer:
     JavaScript 数据类型分为基本类型和对象类型。
