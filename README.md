@@ -106,6 +106,15 @@ alert(caluc.decimalDigits)  // 2
 Calculator.prototype = BaseCalculator.prototype;
 var caluc=new Calculator();
 alert(caluc.decimalDigits)  // undefined
+
+// 覆盖重写前面的add功能
+// 需要写 Calculator.prototype = BaseCalculator.prototype; 的后面
+Calculator.prototype.add=function(x,y){
+	return x+y+this.tax;
+}
+var caluc = new Calculator();
+alert(caluc.add(1, 2)); // 8
+
 ```
 
 
