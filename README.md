@@ -34,6 +34,14 @@ function Foo() {}
 Foo.bar = 1;
 console.log(Foo.bar); // 1
 
+一个常见的误解是数字的字面值(literal)不能当作对象使用。这是因为
+JavaScript解析器的一个错误，它试图将"点操作符"解析为浮点数字面值的一部分。
+console.log(2.toString());  // 出错:SyntaxError
+有很多变通的方法可以让数字值看起来像对象。
+console.log(2..toString()); // 第二个点号可以正常解析
+console.log(2 .toString()); // 注意点号前面的空格
+console.log((2).toString());  // 2先被计算
+
 
 
 
