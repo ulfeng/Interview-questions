@@ -137,8 +137,8 @@ Bar.prototype.foo='Hello World';
 Bar.prototype.constructor=Bar;
 
 var test=new Bar();
-// test 从Bar.prototype和Foo.prototype继承下来，可以访问Bar.foo和Foo.method。需要注意的是 new Bar()不会创造一个新的实例，
-// 而是重复使用它原型上的实例，
+// test 从Bar.prototype和Foo.prototype继承下来，可以访问Bar.foo和Foo.method。
+// 需要注意的是 new Bar()不会创造一个新的实例，而是重复使用它原型上的实例，
 
 
 // 属性查找
@@ -169,8 +169,49 @@ f.prototype = 1; // 无效
 // hasOwnPerproty() 
 // 为了判断一个属性是对象自身而不是原型上的，我们需要使用hasOwnPerproty()函数
 // hasOwnPerproty() 是JavaScript 唯一一个处理属性而不查找原型链的方法
+Object.prototype.bar=1;
+var foo={
+	goo:undefined
+};
+alert(foo.bar); // 	1
+
+alert('bar' in foo); // true
+
+alert(foo.hasOwnProperty('bar')); // false
+alert(foo.hasOwnProperty('goo')); // true
+
+// JavaScript 不会保护 hasOwnProperty 被非法占用，因此如果一个对象碰巧存在这个属性，
+// 就需要使用外部的 hasOwnProperty 函数来获取正确的结果。
+var foo={
+	hasOwnProperty:function(){
+		return false;
+	},
+	bar:'Here be dragons'
+};
+alert(foo.hasOwnProperty('bar'));  // false
+alert({}.hasOwnProperty.call(foo,'bar'));  // true
+
+// 当检查对象上某个属性是否存在时，hasOwnProperty 是唯一可用的方法。
+// 同时在使用 for in loop 遍历对象时，推荐总是使用 hasOwnProperty 方法，
+// 这将会避免原型对象扩展带来的干扰，我们来看一下例子：
+Object.prototype.bar=1;
+var foo={moo:2};
+for(var i in foo){
+	console.log(i);
+} // bar moo
+
+// moo
+for(var i in foo){
+	if(foo.hasOwnProperty(i)){
+		console.log(i);
+	}
+}
+
+
+
 
 ```
+
 
    
 #### 七个去伪存真的 JavaScript 面试题
