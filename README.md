@@ -119,7 +119,7 @@ alert(caluc.add(1, 2)); // 8
 
 ##### JavaScript 原型链 [参考地址](http://bonsaiden.github.io/JavaScript-Garden/zh/)
 answer:
-```
+```javascript
 // 引语
 function Foo() {
     this.value = 42;
@@ -167,6 +167,8 @@ function f(){}
 f.prototype = 1; // 无效
 
 // hasOwnPerproty() 
+// 为了判断一个属性是对象自身而不是原型上的，我们需要使用hasOwnPerproty()函数
+// hasOwnPerproty() 是JavaScript 唯一一个处理属性而不查找原型链的方法
 
 ```
 
