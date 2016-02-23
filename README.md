@@ -24,7 +24,7 @@ answer:
     4、注释
 ```
 
-#### JavaScript 对象的使用和属性 [参考地址](http://bonsaiden.github.io/JavaScript-Garden/zh/#object.general)
+##### JavaScript 对象 [参考地址](http://bonsaiden.github.io/JavaScript-Garden/zh/#object.general)
 ```javascript
 JavaScript中所有的变量都可以当作对象，除了两个例外 null 和 undefined 
 console.log(false.toString());  // false 
@@ -43,7 +43,50 @@ console.log(2 .toString()); // 注意点号前面的空格
 console.log((2).toString());  // 2先被计算
 
 
+对象作为数据类型
+创建一个空对象 {} 
+var foo = {}; // 一个空对象
 
+// 一个新对象，拥有一个值为12的自定义属性'test'
+var foo = {
+    test : 12
+}
+
+
+访问属性
+有两种方法可以访问属性，点操作符或者中括号操作符
+var foo={name:'kitten'}
+foo.name; // kitten
+foo['name']; // kitten
+
+var get='name';
+foo[get]; // kitten
+
+foo.1234;  // SyntaxError
+foo['1234']; // undefined 
+两种方法是有效的，但是中括号操作符在下面两种情况下依然有效：
+1、动态设置属性
+2、属性名不是一个有效的变量名(如属性名中包含空格，或者属性名是JS的关键词)
+
+
+删除属性
+删除属性的唯一方法是使用 delete 操作符；设置属性为 undefined 或者 null 
+并不能真正的删除属性，而仅仅是移除了属性和值的关联。
+var obj={
+	bar:3,
+	baz:4,
+	foo:2
+};
+obj.bar=undefined;
+obj.baz=null;
+delete obj.foo;
+
+for(var i in obj){
+	if(obj.hasOwnProperty(i)){
+		console.log(i);
+	} // bar baz
+}
+可以看出只有 foo 被真正删除了
 
 
 ```
