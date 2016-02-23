@@ -117,9 +117,9 @@ alert(caluc.add(1, 2)); // 8
 
 ```
 
-##### JavaScript 原型链 [参考地址1](http://www.cnblogs.com/TomXu/archive/2012/01/05/2305453.html)[参考地址2](http://www.jb51.net/article/55951.htm)
-
-
+##### JavaScript 原型链 [参考地址](http://bonsaiden.github.io/JavaScript-Garden/zh/)
+answer:
+```
 
    
 #### 七个去伪存真的 JavaScript 面试题
