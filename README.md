@@ -166,7 +166,7 @@ alert(f.substract(2,1)); 1
 function f(){}
 f.prototype = 1; // 无效
 
-
+// hasOwnPerproty() 
 
 ```
 
