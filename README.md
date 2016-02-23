@@ -120,6 +120,55 @@ alert(caluc.add(1, 2)); // 8
 ##### JavaScript 原型链 [参考地址](http://bonsaiden.github.io/JavaScript-Garden/zh/)
 answer:
 ```
+// 引语
+function Foo() {
+    this.value = 42;
+}
+
+Foo.prototype = function() {
+    method: function() {}
+}
+
+function Bar() {}
+
+Bar.prototype = new Foo();
+Bar.prototype.foo='Hello World';
+
+Bar.prototype.constructor=Bar;
+
+var test=new Bar();
+// test 从Bar.prototype和Foo.prototype继承下来，可以访问Bar.foo和Foo.method。需要注意的是 new Bar()不会创造一个新的实例，
+// 而是重复使用它原型上的实例，
+
+
+// 属性查找
+function foo() {
+    this.add = function(x, y) {
+        return x + y;
+    }
+}
+
+foo.prototype.add = function(x, y) {
+    return x + y + 10;
+}
+
+Object.prototype.substract = function(x, y) {
+    return x - y;
+}
+
+var f = new foo();
+alert(f.add(1,3));// 4 而不是 14
+alert(f.substract(2,1)); 1
+// 属性查找的时候先查找自身的属性，如果没有再查找原型，如果没有再往上查找
+
+
+// 注意 任何类型的对象的原型都不能赋值
+function f(){}
+f.prototype = 1; // 无效
+
+
+
+```
 
    
 #### 七个去伪存真的 JavaScript 面试题
