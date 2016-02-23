@@ -89,6 +89,16 @@ for(var i in obj){
 可以看出只有 foo 被真正删除了
 
 
+属性名
+var test = {
+    'case': 'I am a keyword so I must be notated as a string',
+    delete: 'I am a keyword too so me' // 出错：SyntaxError
+};
+对象的属性名可以使用字符串或者普通字符声明。但是由于 JavaScript 解析器的另一个错误设计，
+上面的第二种声明方式在 ECMAScript 5 之前会抛出 SyntaxError 的错误。
+
+这个错误的原因是 delete 是 JavaScript 语言的一个关键词；因此为了在更低版本的 JavaScript 
+引擎下也能正常运行， 必须使用字符串字面值声明方式。
 ```
 
 
