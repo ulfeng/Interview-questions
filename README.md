@@ -23,7 +23,7 @@ answer:
     3、命名
     4、注释
 ```
-##### JavaScript 原型/原型链 [参考地址1](http://www.cnblogs.com/TomXu/archive/2012/01/05/2305453.html)[参考地址2](http://www.jb51.net/article/55951.htm)
+##### JavaScript 原型 [参考地址1](http://www.cnblogs.com/TomXu/archive/2012/01/05/2305453.html)[参考地址2](http://www.jb51.net/article/55951.htm)
 ```javascript
 // answer:
 // 刚学习JavaScript的时候，一般都是用如下方式来写代码
@@ -116,6 +116,8 @@ var caluc = new Calculator();
 alert(caluc.add(1, 2)); // 8
 
 ```
+
+##### JavaScript 原型链 [参考地址1](http://www.cnblogs.com/TomXu/archive/2012/01/05/2305453.html)[参考地址2](http://www.jb51.net/article/55951.htm)
 
 
 
