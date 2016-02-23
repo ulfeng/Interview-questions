@@ -23,7 +23,26 @@ answer:
     3、命名
     4、注释
 ```
-##### JavaScript 原型 [参考地址1](http://www.cnblogs.com/TomXu/archive/2012/01/05/2305453.html)[参考地址2](http://www.jb51.net/article/55951.htm)
+
+#### JavaScript 对象的使用和属性 [参考地址](http://bonsaiden.github.io/JavaScript-Garden/zh/#object.general)
+```javascript
+JavaScript中所有的变量都可以当作对象，除了两个例外 null 和 undefined 
+console.log(false.toString());  // false 
+console.log([1, 3, 4].toString());  // 1,3,4
+
+function Foo() {}  
+Foo.bar = 1;
+console.log(Foo.bar); // 1
+
+
+
+
+
+```
+
+
+
+##### JavaScript 原型 [参考地址](http://www.cnblogs.com/TomXu/archive/2012/01/05/2305453.html)
 ```javascript
 // answer:
 // 刚学习JavaScript的时候，一般都是用如下方式来写代码
