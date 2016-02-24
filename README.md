@@ -288,7 +288,7 @@ for(var i in foo){
 }
 ```
 
-##### JavaScript 函数申明和表达式
+##### JavaScript 函数声明和表达式
 ```javascript
 函数声明:
 function foo(){}
