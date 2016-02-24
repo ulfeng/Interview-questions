@@ -288,6 +288,54 @@ for(var i in foo){
 }
 ```
 
+##### JavaScript 函数申明和表达式
+```javascript
+函数声明:
+function foo(){}
+上面的方法会在执行前被解析(hoisted),因此它存在于当前上下位的任意一个地方。
+即使在函数定义体的上面被调用也是对的。
+foo(); // 正常运行，因为foo在代码运行前已经被创建
+function foo(){};
+
+
+函数赋值表达式：
+foo; // undefined
+foo(); // 出错
+var foo = function(){};
+由于 var 定义了一个声明语句，对变量 foo 的解析是在代码运行之前，因此
+foo 变量在代码运行时已经被定义过了。
+但是由于赋值语句只在运行时执行，因此在相应代码执行之前， foo 的值缺省为 undefined .
+
+
+命名函数的赋值表达式：
+var foo = function bar(){
+    bar(); // 正常运行
+}
+bar(); // 出错：ReferenceError
+bar 函数声明外是不可见的，这是因为我们已经把函数赋值给了 foo ;然而在 bar 内部依然可见。
+这是由于 JavaScript 的命名处理所致，函数名在函数内部总是可见的。
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
    
 #### 七个去伪存真的 JavaScript 面试题
