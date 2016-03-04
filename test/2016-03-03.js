@@ -30,7 +30,7 @@ function getNthFibonacci(count) {
     return third;
 }
 
-alert(getNthFibonacci(8));
+// alert(getNthFibonacci(8));
 
 function obj(name) {
     if (name) {
@@ -46,3 +46,23 @@ var data = { a: 1, b: 2, c: 3, d: 4 };
 Object.keys(data).filter(function(x) {
     return data[x] > 2;
 });
+
+
+// Should equal 15
+// sum(1, 2, 3, 4, 5);
+// Should equal 0
+// sum(5, null, -5);
+// Should equal 10
+// sum('1.0', false, 1, true, 1, 'A', 1, 'B', 1, 'C', 1, 'D', 1,   'E', 1, 'F', 1, 'G', 1);
+// Should equal 0.3, not 0.30000000000000004
+// sum(0.1, 0.2);
+
+function sum() {
+	var sum = 0;
+    for (var i = 0; i < arguments.length; i++) {
+        sum += arguments[i];
+    }
+    return Number(sum);
+}
+
+alert(sum('1.0', false, 1, true, 1, 'A', 1, 'B', 1, 'C', 1, 'D', 1,   'E', 1, 'F', 1, 'G', 1));
