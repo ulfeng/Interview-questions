@@ -53,6 +53,8 @@ function b() {
     return c;
 }
 
-alert(b()());  // 2
+// alert(b()());  // 2
+
+
 
 

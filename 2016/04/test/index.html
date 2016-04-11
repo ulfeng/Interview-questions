@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>test</title>
+<meta name="description" content="">
+<meta name="keywords" content="">
+<link href="" rel="stylesheet">
+</head>
+<body>
+    <script>
+    function combo(str){
+	var strArr = str.split("-");
+	var len = strArr.length;
+	for(var i=1;i<len;i++){
+	    strArr[i]=strArr[i].charAt(0).toUpperCase() + strArr[i].substr(1);
+	}
+	var resStr=strArr.join("");
+	return resStr;
+}
+
+var str="get-element-by-id";
+alert(combo(str));
+    </script>
+</body>
+</html>
